@@ -1,0 +1,7 @@
+@import "@openbricksandbraces/designtokens/dist/pcss/index.pcss";
+@import "@openbricksandbraces/designsystem/lib/styles/dist/index.css";
+
+@import "@openbricksandbraces/designsystem/lib/styles/postcss/settings.pcss";
+@import "@openbricksandbraces/designsystem/lib/styles/postcss/mixins.pcss";
+
+@import "./components/Footer.pcss";

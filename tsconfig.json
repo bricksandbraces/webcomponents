@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "outDir": "lib/esm",
+    "module": "esnext",
+    "target": "es2019",
+    "lib": ["dom", "dom.iterable", "esnext", "es2020"],
+    "declaration": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "incremental": true
+  },
+  "include": ["src", ".storybook/Components/**/*.tsx"],
+  "exclude": ["node_modules", "lib", ".eslintrc.js", "cypress", "tasks"]
+}
