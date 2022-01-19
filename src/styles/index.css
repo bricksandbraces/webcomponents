@@ -4,4 +4,13 @@
 @import "@openbricksandbraces/designsystem/lib/styles/postcss/settings.pcss";
 @import "@openbricksandbraces/designsystem/lib/styles/postcss/mixins.pcss";
 
+@import "./components/BackToTop.pcss";
+@import "./components/ContactSection.pcss";
+@import "./components/CookieBanner.pcss";
+@import "./components/CookieModal.pcss";
 @import "./components/Footer.pcss";
+@import "./components/Header.pcss";
+@import "./components/LeadSpace.pcss";
+@import "./components/LoginForm.pcss";
+@import "./components/PriceTag.pcss";
+@import "./components/WebTabs.pcss";
