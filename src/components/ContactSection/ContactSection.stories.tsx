@@ -17,17 +17,17 @@ export const Default = () => {
       days."
       contactInfoLinks={[
         {
-          icon: () => IconPhone,
+          renderIcon: () => <IconPhone />,
           href: "tel:+0123 4567 89010",
           label: "+0123 4567 89010"
         },
         {
-          icon: () => IconMail,
+          renderIcon: () => <IconMail />,
           href: "mailto:moin@bricksandbraces.com",
           label: "moin@bricksandbraces.com"
         },
         {
-          icon: () => IconMapPin,
+          renderIcon: () => <IconMapPin />,
           href: "https://goo.gl/maps/pvUqd6uUNrE4iqbBA",
           label: "123 Street, 21456 Hamburg, Germany"
         }

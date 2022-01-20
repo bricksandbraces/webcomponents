@@ -37,7 +37,11 @@ export type ContactSectionProps = {
   /**
    * ContactSection Contact Info Links
    */
-  contactInfoLinks: { icon: React.ReactNode; href: string; label: string }[];
+  contactInfoLinks: {
+    renderIcon: () => JSX.Element;
+    href: string;
+    label: string;
+  }[];
 
   /**
    * ContactSection On Submit
@@ -107,7 +111,7 @@ export const ContactSection = React.forwardRef(function ContactSection({
                 key={link.label + link.href}
                 className={`${prefix}--contactsection-info--contact-item`}
               >
-                {link.icon}
+                {link.renderIcon()}
                 <Link href={link.href}>{link.label}</Link>
               </div>
             );
@@ -119,8 +123,8 @@ export const ContactSection = React.forwardRef(function ContactSection({
           smOffset={0}
           md={6}
           mdOffset={1}
-          lg={6}
-          xlg={6}
+          lg={8}
+          xlg={8}
         >
           <form>
             <div className={`${prefix}--contactsection-form--textfields`}>
