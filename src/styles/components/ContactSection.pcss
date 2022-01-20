@@ -1,0 +1,74 @@
+.$(prefix) {
+  &--contactsection {
+    &-header {
+      margin-bottom: var(--size-spacing-09);
+      color: var(--color-font-text-01);
+      text-align: center;
+    }
+
+    &-info {
+      padding: var(--size-spacing-06);
+
+      @media (min-width: $breakpoint-md) {
+        border-radius: var(--component-radius-03);
+      }
+
+      background-color: var(--color-brand-04);
+      color: var(--color-onbrand-01);
+
+      & > div {
+        & > p {
+          margin-bottom: var(--size-spacing-11);
+          opacity: 0.8;
+        }
+        & > .$(prefix)--contactsection-info--contact-item {
+          margin-bottom: var(--size-spacing-07);
+
+          & > a {
+            margin-left: var(--size-spacing-04);
+            color: var(--color-onbrand-01);
+          }
+        }
+      }
+    }
+
+    &-form {
+      margin: var(--size-spacing-06) 0;
+      @media (min-width: $breakpoint-sm) {
+        padding: 0 var(--size-spacing-06);
+      }
+
+      & > div > form {
+        & > fieldset.$(prefix)--radiobutton-group {
+          margin-top: var(--size-spacing-05);
+          padding: 0;
+        }
+
+        & > div.$(prefix)--contactsection-form--textfields {
+          display: grid;
+          grid-column-gap: var(--size-spacing-05);
+          grid-row-gap: var(--size-spacing-05);
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+
+          & > .bb--textinput {
+            width: unset;
+          }
+        }
+
+        & > .$(prefix)--textarea {
+          width: 100%;
+
+          & > div > textarea {
+            resize: none;
+          }
+        }
+
+        & > button {
+          margin-top: var(--size-spacing-05);
+          float: right;
+        }
+      }
+    }
+  }
+}
