@@ -5,3 +5,4 @@
 @import "@openbricksandbraces/designsystem/lib/styles/postcss/mixins.pcss";
 
 @import "./components/Footer.pcss";
+@import "./components/Expander.pcss";
