@@ -4,7 +4,7 @@ import {
   Headline,
   Marketing
 } from "@openbricksandbraces/designsystem";
-import { withKnobs } from "@storybook/addon-knobs";
+import { boolean, withKnobs } from "@storybook/addon-knobs";
 import React from "react";
 import { CTASection } from "../CTASection/CTASection";
 import { Footer } from "../Footer/Footer";
@@ -60,7 +60,7 @@ export const Default = () => {
           </div>
         </Column>
       </Grid>
-      <BackToTop />
+      <BackToTop anchor={boolean("anchor", false)} />
       <CTASection />
       <Footer
         baseUrl="#"
