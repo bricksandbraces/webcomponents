@@ -168,6 +168,8 @@ export const ContactSection = React.forwardRef(function ContactSection({
                 className={`${prefix}--contactsection-form__textarea`}
               />
               <Button
+                className={`${prefix}--contactsection-form__button`}
+                size="large"
                 onClick={(event) =>
                   onSubmit(
                     new FormData(formRef.current),
