@@ -1,12 +1,12 @@
 import {
   Body,
   Button,
+  Checkbox,
+  CheckboxGroup,
   Column,
   Grid,
   Headline,
   Link,
-  RadioButton,
-  RadioButtonGroup,
   TextArea,
   TextInput
 } from "@openbricksandbraces/designsystem";
@@ -14,16 +14,6 @@ import React, { useRef } from "react";
 import { prefix } from "../../settings";
 
 export type ContactSectionProps = {
-  /**
-   * ContactSection Section Title
-   */
-  sectionTitle: string;
-
-  /**
-   * ContactSection Section Intro
-   */
-  sectionIntro: string;
-
   /**
    * ContactSection Contact Info Headline
    */
@@ -63,8 +53,6 @@ export type ContactSectionProps = {
 };
 
 export const ContactSection = React.forwardRef(function ContactSection({
-  sectionTitle,
-  sectionIntro,
   contactInfoHeadline,
   contactInfoDescription,
   contactInfoLinks,
@@ -74,12 +62,10 @@ export const ContactSection = React.forwardRef(function ContactSection({
 }: ContactSectionProps) {
   const formRef = useRef<HTMLFormElement>();
   return (
-    <section className={`${prefix}--contactsection-container`}>
-      <Grid>
+    <section className={`${prefix}--contactsection`}>
+      <Grid narrow>
         <Column
-          className={`${prefix}--contactsection-header`}
           sm={4}
-          smOffset={0}
           md={6}
           mdOffset={1}
           lg={14}
@@ -87,89 +73,114 @@ export const ContactSection = React.forwardRef(function ContactSection({
           xlg={14}
           xlgOffset={1}
         >
-          <Headline>{sectionTitle}</Headline>
-          <Headline type="h5">{sectionIntro}</Headline>
-        </Column>
-      </Grid>
-      <Grid narrow>
-        <Column
-          className={`${prefix}--contactsection-info`}
-          sm={4}
-          smOffset={0}
-          md={6}
-          mdOffset={1}
-          lg={6}
-          lgOffset={1}
-          xlg={6}
-          xlgOffset={1}
-        >
-          <Headline type="h2">{contactInfoHeadline}</Headline>
-          <Body>{contactInfoDescription}</Body>
-          {contactInfoLinks.map((link) => {
-            return (
-              <div
-                key={link.label + link.href}
-                className={`${prefix}--contactsection-info--contact-item`}
+          <div className={`${prefix}--contactsection-container`}>
+            <div className={`${prefix}--contactsection-info`}>
+              <Headline
+                type="h2"
+                className={`${prefix}--contactsection-info__headline`}
               >
-                {link.renderIcon()}
-                <Link href={link.href}>{link.label}</Link>
+                {contactInfoHeadline}
+              </Headline>
+              <p className={`${prefix}--contactsection-info__text`}>
+                {contactInfoDescription}
+              </p>
+              <div className={`${prefix}--contactsection-info__contact`}>
+                {contactInfoLinks.map((link) => {
+                  return (
+                    <div
+                      key={link.label + link.href}
+                      className={`${prefix}--contactsection-info__contact-item`}
+                    >
+                      <Link
+                        icon={link.renderIcon()}
+                        iconPosition="start"
+                        href={link.href}
+                      >
+                        {link.label}
+                      </Link>
+                    </div>
+                  );
+                })}
               </div>
-            );
-          })}
-        </Column>
-        <Column
-          className={`${prefix}--contactsection-form`}
-          sm={4}
-          smOffset={0}
-          md={6}
-          mdOffset={1}
-          lg={8}
-          xlg={8}
-        >
-          <form>
-            <div className={`${prefix}--contactsection-form--textfields`}>
-              <TextInput name="first-name" label="First Name" />
-              <TextInput name="last-name" label="Last Name" />
-              <TextInput name="mail" label="Mail" type="email" />
-              <TextInput
-                name="phone"
-                label="Phone"
-                {...({ type: "tel" } as any)}
-              />
             </div>
-            <RadioButtonGroup
-              name={"matter"}
-              legendLabel="What is your need?"
-              orientation="horizontal"
-            >
-              {needs.map((need) => {
-                return (
-                  <RadioButton
-                    id={need.value}
-                    key={need.value}
-                    value={need.value}
-                  >
-                    {need.label}
-                  </RadioButton>
-                );
-              })}
-            </RadioButtonGroup>
-            <TextArea
-              name="message"
-              label="Message"
-              placeholder="Write us your message..."
-            />
-            <Button
-              onClick={(event) =>
-                onSubmit(
-                  new FormData(formRef.current),
-                  event as React.MouseEvent<HTMLButtonElement>
-                )
-              }
-            >
-              {submitLabel}
-            </Button>
-          </form>
+
+            <form className={`${prefix}--contactsection-form`}>
+              <div className={`${prefix}--contactsection-form__textfields`}>
+                <div
+                  className={`${prefix}--contactsection-form__textfields-container`}
+                >
+                  <TextInput
+                    fluid
+                    name="first-name"
+                    placeholder="First Name"
+                    className={`${prefix}--contactsection-form__textfields-input`}
+                  />
+                  <TextInput
+                    fluid
+                    name="last-name"
+                    placeholder="Last Name"
+                    className={`${prefix}--contactsection-form__textfields-input`}
+                  />
+                </div>
+                <div
+                  className={`${prefix}--contactsection-form__textfields-container`}
+                >
+                  <TextInput
+                    fluid
+                    name="mail"
+                    placeholder="Mail"
+                    type="email"
+                    className={`${prefix}--contactsection-form__textfields-input`}
+                  />
+                  <TextInput
+                    fluid
+                    name="phone"
+                    placeholder="Phone (optional)"
+                    {...({ type: "tel" } as any)}
+                    className={`${prefix}--contactsection-form__textfields-input`}
+                  />
+                </div>
+              </div>
+              <div className={`${prefix}--contactsection-needs`}>
+                <Body
+                  type="body-02"
+                  className={`${prefix}--contactsection-needs__headline`}
+                >
+                  What type of service do you need?
+                </Body>
+
+                <CheckboxGroup name="group" orientation="vertical">
+                  {needs.map((need) => {
+                    return (
+                      <Checkbox
+                        id={need.value}
+                        key={need.value}
+                        value={need.value}
+                        label={need.label}
+                      />
+                    );
+                  })}
+                </CheckboxGroup>
+              </div>
+              <TextArea
+                name="message"
+                placeholder="Write us your message..."
+                className={`${prefix}--contactsection-form__textarea`}
+              />
+              <Button
+                className={`${prefix}--contactsection-form__button`}
+                size="large"
+                onClick={(event) =>
+                  onSubmit(
+                    new FormData(formRef.current),
+                    event as React.MouseEvent<HTMLButtonElement>
+                  )
+                }
+              >
+                {submitLabel}
+              </Button>
+            </form>
+          </div>
         </Column>
       </Grid>
     </section>

@@ -10,11 +10,8 @@ export default { title: "Web/ContactSection", decorators: [withKnobs] };
 export const Default = () => {
   return (
     <ContactSection
-      sectionTitle="Contact us"
-      sectionIntro="Any questions or remarks? Just write us a message!"
-      contactInfoHeadline="Contact Information"
-      contactInfoDescription="Fill up the form and we will get back to you within 2 business
-      days."
+      contactInfoHeadline="How can we help you &amp; your business?"
+      contactInfoDescription="Fill up the form and we will get back to you within 24 hours."
       contactInfoLinks={[
         {
           renderIcon: () => <IconPhone />,
@@ -33,9 +30,10 @@ export const Default = () => {
         }
       ]}
       needs={[
-        { label: "Web Design", value: "web" },
+        { label: "Web Experience", value: "web" },
         { label: "Customer Experience", value: "cx" },
-        { label: "Mobile Apps", value: "mobile" }
+        { label: "Mobile Apps", value: "mobile" },
+        { label: "Strategy", value: "mobile" }
       ]}
       onSubmit={action("onSubmit")}
       submitLabel={"Send message"}
