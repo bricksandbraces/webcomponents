@@ -9,23 +9,7 @@ import { prefix } from "@openbricksandbraces/designsystem/lib/esm/src/settings";
 import { IconPlayerPause, IconPlayerPlay } from "@tabler/icons";
 import cx from "classnames";
 import React, { useRef, useState } from "react";
-
-export type CtaItem = {
-  /**
-   * CtaItem Link to location
-   */
-  href: string;
-
-  /**
-   * CtaItem Label
-   */
-  label: string;
-
-  /**
-   * CtaItem Chevron
-   */
-  showChevron: boolean;
-};
+import { CtaItem } from "./LeadSpace";
 
 export type LeadSpaceProductProps = {
   /**
