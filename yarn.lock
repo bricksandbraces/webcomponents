@@ -2552,9 +2552,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@openbricksandbraces/designsystem@npm:^0.0.28":
-  version: 0.0.28
-  resolution: "@openbricksandbraces/designsystem@npm:0.0.28::__archiveUrl=https%3A%2F%2Fregistry.npmjs.org%2F%40openbricksandbraces%2Fdesignsystem%2F-%2Fdesignsystem-0.0.28.tgz"
+"@openbricksandbraces/designsystem@npm:^0.0.29":
+  version: 0.0.29
+  resolution: "@openbricksandbraces/designsystem@npm:0.0.29::__archiveUrl=https%3A%2F%2Fregistry.npmjs.org%2F%40openbricksandbraces%2Fdesignsystem%2F-%2Fdesignsystem-0.0.29.tgz"
   dependencies:
     "@openbricksandbraces/designtokens": ^0.0.8
     "@openbricksandbraces/eloguent": ^0.1.2
@@ -2600,7 +2600,7 @@ __metadata:
   peerDependencies:
     react: ^17.X
     react-dom: ^17.X
-  checksum: 5e14b02eb0a89befeeca26ef6728e3f8e1db678ffa9277c037f3155a38a234947b87c526d21d81975e860d9557656456f54354462ceb9eaebab9198c35bf4191
+  checksum: 1edb498d7184c565192ab4c7511613c3a8846c356b696a0fb36f6b041f48aac747191d084ae0ea888a7ecdd0374bb1af3d13d37f552ab06ac3bb05ce9a619a2e
   languageName: node
   linkType: hard
 
@@ -2623,7 +2623,7 @@ __metadata:
   resolution: "@openbricksandbraces/webcomponents@workspace:."
   dependencies:
     "@babel/core": ^7.16.7
-    "@openbricksandbraces/designsystem": ^0.0.28
+    "@openbricksandbraces/designsystem": ^0.0.29
     "@openbricksandbraces/designtokens": ^0.0.8
     "@openbricksandbraces/eloguent": ^0.1.2
     "@storybook/addon-a11y": ^6.4.13
