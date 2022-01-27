@@ -53,7 +53,10 @@ export const WithVideo = () => {
         { href: "#", label: "What we do", showChevron: true },
         { href: "#", label: "Learn more about us", showChevron: false }
       ])}
-      videoUrl={text("videoUrl", "assets/video.mp4")}
+      videoUrl={text(
+        "videoUrl",
+        "https://bb-public-generic-web-bucket.s3.eu-central-1.amazonaws.com/waves-video.mp4"
+      )}
       backgroundImage={text(
         "backgroundImage",
         "https://i.pinimg.com/originals/30/c6/c3/30c6c39d2ad38b4be22a4932707b0550.png"
