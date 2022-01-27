@@ -33,7 +33,7 @@ export const Default = () => {
         { label: "Web Experience", value: "web" },
         { label: "Customer Experience", value: "cx" },
         { label: "Mobile Apps", value: "mobile" },
-        { label: "Strategy", value: "mobile" }
+        { label: "Strategy", value: "strategy" }
       ]}
       onSubmit={action("onSubmit")}
       submitLabel={"Send message"}
