@@ -45,7 +45,7 @@
     "react-dom": "^17.X"
   },
   "dependencies": {
-    "@openbricksandbraces/designsystem": "^0.0.28",
+    "@openbricksandbraces/designsystem": "^0.0.3",
     "@openbricksandbraces/designtokens": "^0.0.8",
     "@openbricksandbraces/eloguent": "^0.1.2",
     "@storybook/addon-a11y": "^6.4.13",

@@ -1,41 +1,82 @@
 import { prefix } from "@openbricksandbraces/designsystem/lib/esm/src/settings";
 import cx from "classnames";
-import React from "react";
+import React, { ReactNode } from "react";
 
-export type HeaderLinkProps = {
+export type ProductHeaderLinkProps = {
   /**
-   * HeaderLink Children
+   * ProductHeaderLink Children
    */
-  children?: React.ReactNode;
+  children: ReactNode;
 
   /**
-   * HeaderLink ClassName
-   */
-  className?: string;
-
-  /**
-   * HeaderLink Href
+   * ProductHeaderLink Location
    */
   href?: string;
 
   /**
-   * HeaderLink OnClick Function
+   * ProductHeaderLink Target
    */
-  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+  target?: string;
+
+  /**
+   * ProductHeaderLink ClassName
+   */
+  className?: string;
+
+  /**
+   * ProductHeaderLink Promo
+   */
+  promo?: boolean;
+
+  /**
+   * ProductHeaderLink Icon
+   */
+  icon?: ReactNode;
+
+  /**
+   * ProductHeaderLink IconPosition
+   */
+  iconPosition?: "start" | "end";
+
+  /**
+   * ProductHeaderLink OnClick Event
+   */
+  onClick?: React.MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>;
 };
 
-export const HeaderLink = React.forwardRef(function HeaderLink(
-  { className, href, children, ...rest }: HeaderLinkProps,
-  ref: React.ForwardedRef<HTMLAnchorElement>
-) {
+export const ProductHeaderLink = React.forwardRef(function ProductHeaderLink({
+  children,
+  href,
+  target,
+  icon,
+  promo,
+  iconPosition = "end",
+  onClick,
+  className,
+  ...rest
+}: ProductHeaderLinkProps) {
+  const Element = React.createElement(href ? "a" : "button").type;
+
   return (
-    <a
-      href={href}
+    <Element
+      className={cx(
+        `${prefix}--header-product__link`,
+        {
+          [`${prefix}--header-product__link-icon--${iconPosition}`]:
+            iconPosition && icon,
+          [`${prefix}--header-product__link-promo`]: promo
+        },
+        className
+      )}
       {...rest}
-      className={cx(`${prefix}--header-link`, className)}
-      ref={ref}
+      href={href}
+      target={target}
+      onClick={onClick as React.MouseEventHandler<HTMLElement>}
     >
-      {children}
-    </a>
+      <span className={`${prefix}--header-product__link-label`}>
+        {children}
+      </span>
+      {icon}
+    </Element>
   );
 });
