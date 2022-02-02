@@ -6,6 +6,7 @@
 
 @import "./components/Footer.pcss";
 @import "./components/Hero.pcss";
+@import "./components/Capability.pcss";
 @import "./components/BackToTop.pcss";
 @import "./components/Header.pcss";
 @import "./components/WebTabs.pcss";

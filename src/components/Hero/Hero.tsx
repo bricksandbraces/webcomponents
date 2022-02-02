@@ -1,15 +1,12 @@
 import {
-  IconOnlyButton,
   Grid,
   Column,
-  Button,
   AspectRatio
 } from "@openbricksandbraces/designsystem";
 import { idfy } from "@openbricksandbraces/designsystem/lib/esm/src/helpers/arrayUtilities";
 import { prefix } from "@openbricksandbraces/designsystem/lib/esm/src/settings";
-import { IconPlayerPause, IconPlayerPlay } from "@tabler/icons";
 import cx from "classnames";
-import React, { useRef, useState } from "react";
+import React from "react";
 
 export type CtaItem = {
   /**

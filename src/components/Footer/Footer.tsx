@@ -1,8 +1,7 @@
-import { Column, Grid, Link, Logo } from "@openbricksandbraces/designsystem";
+import { Column, Grid, Logo } from "@openbricksandbraces/designsystem";
 import type { LinkItem } from "@openbricksandbraces/designsystem";
 import { idfy } from "@openbricksandbraces/designsystem/lib/esm/src/helpers/arrayUtilities";
 import { prefix } from "@openbricksandbraces/designsystem/lib/esm/src/settings";
-import { IconMenu } from "@tabler/icons";
 import cx from "classnames";
 import React from "react";
 
@@ -86,46 +85,6 @@ export const Footer = React.forwardRef(function Footer(
             </Grid>
           </Column>
         </Grid>
-
-        {/* <Grid narrow className={`${prefix}--footer-grid`}>
-          <Column
-            sm={3}
-            md={4}
-            lg={4}
-            lgOffset={1}
-            xlg={4}
-            xlgOffset={1}
-            className={`${prefix}--footer-column`}
-          >
-            <Logo
-              size="xsmall"
-              type="logotype"
-              color="white"
-              className={`${prefix}--footer-logo`}
-            />
-          </Column>
-          <Column
-            sm={4}
-            md={4}
-            lg={11}
-            xlg={11}
-            className={`${prefix}--footer-column`}
-          >
-            <div className={`${prefix}--footer-linksection`}>
-              {indexedLinkItems?.map((link) => {
-                return (
-                  <Link
-                    key={link.id}
-                    href={link.href}
-                    className={`${prefix}--footer-linksection__item`}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              })}
-            </div>
-          </Column>
-        </Grid> */}
       </footer>
     </>
   );
