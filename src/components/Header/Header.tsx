@@ -1,11 +1,9 @@
 import { Grid, Column, Logo, Button } from "@openbricksandbraces/designsystem";
 import { idfy } from "@openbricksandbraces/designsystem/lib/esm/src/helpers/arrayUtilities";
-import { useControlledValue } from "@openbricksandbraces/designsystem/lib/esm/src/hooks/useControlled";
 import { prefix } from "@openbricksandbraces/designsystem/lib/esm/src/settings";
-import { IconAccessible, IconMenu, IconMenu2, IconX } from "@tabler/icons";
+import { IconMenu, IconX } from "@tabler/icons";
 import cx from "classnames";
 import React, { useState } from "react";
-import { HeaderLink } from "./HeaderLink";
 
 export type HeaderLinkItem = {
   /**
@@ -17,11 +15,6 @@ export type HeaderLinkItem = {
    * HeaderLinkItem Label
    */
   label: string;
-
-  /**
-   * HeaderLinkItem Promo
-   */
-  promo?: boolean;
 };
 
 export type HeaderProps = {
@@ -73,7 +66,7 @@ export const Header = React.forwardRef(function Header(
         })}
       >
         <div className={cx(`${prefix}--header-menu__button-container`)}>
-          <p className={cx(`${prefix}--header-menu__label`)}>Moin! &#U+270C</p>
+          <p className={cx(`${prefix}--header-menu__label`)}>Moin!</p>
           <button
             className={cx(`${prefix}--header-menu__button`)}
             onClick={() => setOpen(false)}
@@ -83,11 +76,17 @@ export const Header = React.forwardRef(function Header(
         </div>
         <div className={cx(`${prefix}--header-menu__item-list`)}>
           <div>
-            <a className={cx(`${prefix}--header-menu__item`)}>
-              Über Bricks &amp; Braces
-            </a>
-            <a className={cx(`${prefix}--header-menu__item`)}>Leistungen</a>
-            <a className={cx(`${prefix}--header-menu__item`)}>Blog</a>
+            {indexedHeaderLinkItems?.map((link) => {
+              return (
+                <a
+                  key={link.id}
+                  href={link.href}
+                  className={cx(`${prefix}--header-menu__item`)}
+                >
+                  <p>{link.label}</p>
+                </a>
+              );
+            })}
           </div>
           <Button
             fluid
@@ -113,15 +112,17 @@ export const Header = React.forwardRef(function Header(
             <Logo type="logotype" color="black" size="xsmall" />
           </a>
           <div className={cx(`${prefix}--header-links`)}>
-            <a href={baseUrl} className={cx(`${prefix}--header-links__item`)}>
-              <p>Item 1</p>
-            </a>
-            <a href={baseUrl} className={cx(`${prefix}--header-links__item`)}>
-              <p>Item 2</p>
-            </a>
-            <a href={baseUrl} className={cx(`${prefix}--header-links__item`)}>
-              <p>Item 3</p>
-            </a>
+            {indexedHeaderLinkItems?.map((link) => {
+              return (
+                <a
+                  key={link.id}
+                  href={link.href}
+                  className={cx(`${prefix}--header-links__item`)}
+                >
+                  <p>{link.label}</p>
+                </a>
+              );
+            })}
           </div>
           <button
             className={cx(`${prefix}--header-button`)}

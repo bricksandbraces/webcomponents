@@ -12,43 +12,18 @@ export type FooterProps = {
   linkItems?: LinkItem[];
 
   /**
-   * Footer CompanyLabel
-   */
-  companyLabel?: React.ReactNode;
-
-  /**
    * Footer ClassName
    */
   className?: string;
 
   /**
-   * Footer CtaHeadline
-   */
-  ctaHeadline?: string;
-
-  /**
-   * Footer CtaText
-   */
-  ctaText?: string;
-
-  /**
    * Footer BaseUrl
    */
   baseUrl?: string;
-
-  /**
-   * Footer Description
-   */
-  description?: string;
-
-  /**
-   * Footer DescriptionLink
-   */
-  descriptionLink?: LinkItem;
 };
 
 export const Footer = React.forwardRef(function Footer(
-  { linkItems, className }: FooterProps,
+  { linkItems, baseUrl, className }: FooterProps,
   ref: React.ForwardedRef<HTMLElement>
 ) {
   const indexedLinkItems = idfy(linkItems);
@@ -67,19 +42,21 @@ export const Footer = React.forwardRef(function Footer(
                 xlg={14}
                 className={cx(`${prefix}--footer-container`)}
               >
-                <a href="#" className={cx(`${prefix}--footer-logo`)}>
+                <a href={baseUrl} className={cx(`${prefix}--footer-logo`)}>
                   <Logo type="logotype" color="black" size="xsmall" />
                 </a>
                 <div className={cx(`${prefix}--footer-links`)}>
-                  <a href="#" className={cx(`${prefix}--footer-links__item`)}>
-                    <p>Item 1</p>
-                  </a>
-                  <a href="#" className={cx(`${prefix}--footer-links__item`)}>
-                    <p>Item 2</p>
-                  </a>
-                  <a href="#" className={cx(`${prefix}--footer-links__item`)}>
-                    <p>Item 3</p>
-                  </a>
+                  {indexedLinkItems?.map((link) => {
+                    return (
+                      <a
+                        key={link.id}
+                        href={link.href}
+                        className={cx(`${prefix}--footer-links__item`)}
+                      >
+                        <p>{link.label}</p>
+                      </a>
+                    );
+                  })}
                 </div>
               </Column>
             </Grid>
