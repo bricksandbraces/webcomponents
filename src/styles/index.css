@@ -10,6 +10,7 @@
 @import "./components/CookieModal.pcss";
 @import "./components/CTASection.pcss";
 @import "./components/Footer.pcss";
+@import "./components/Expander.pcss";
 @import "./components/Header.pcss";
 @import "./components/LeadSpace.pcss";
 @import "./components/LoginForm.pcss";

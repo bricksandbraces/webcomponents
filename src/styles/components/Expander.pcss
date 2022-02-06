@@ -1,0 +1,58 @@
+.$(prefix) {
+  &--expander {
+    display: flex;
+    gap: var(--size-spacing-05);
+    flex-flow: column;
+
+    &-item {
+      width: 100%;
+      max-height: var(--size-container-06);
+      overflow: hidden;
+      transition: box-shadow var(--transition-app-01);
+      border: 0.0625rem solid var(--color-border);
+      border-radius: var(--component-radius-02);
+      background-color: var(--color-background);
+      box-shadow: var(--component-shadow-01);
+      color: var(--color-font-text-01);
+
+      &:focus-within {
+        outline: 0;
+        box-shadow: 0 0 0 0.0625rem var(--color-focus),
+          0 0 0 0.25rem var(--color-focus-highlight);
+      }
+
+      &__icon {
+        min-width: var(--size-container-01);
+        max-width: var(--size-container-01);
+        min-height: var(--size-container-01);
+        max-height: var(--size-container-01);
+      }
+
+      &__open {
+        max-height: unset;
+      }
+
+      &__content {
+        @mixin type--body-02;
+
+        width: 90%;
+        padding: 0 var(--size-spacing-06) var(--size-spacing-06);
+        color: var(--color-font-text-04);
+      }
+
+      &__button {
+        @mixin type--headline-06;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        min-height: var(--size-container-06);
+        max-height: var(--size-container-06);
+        padding: var(--size-spacing-06);
+        background-color: transparent;
+        color: var(--color-font-text-01);
+      }
+    }
+  }
+}
