@@ -22,7 +22,7 @@ export type CtaItem = {
   /**
    * CtaItem Chevron
    */
-  showChevron: boolean;
+  showChevron?: boolean;
 };
 
 export type HeroProps = {
