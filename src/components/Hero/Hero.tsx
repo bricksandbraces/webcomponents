@@ -8,23 +8,6 @@ import { prefix } from "@openbricksandbraces/designsystem/lib/esm/src/settings";
 import cx from "classnames";
 import React from "react";
 
-export type CtaItem = {
-  /**
-   * CtaItem Link to location
-   */
-  href: string;
-
-  /**
-   * CtaItem Label
-   */
-  label: string;
-
-  /**
-   * CtaItem Chevron
-   */
-  showChevron: boolean;
-};
-
 export type HeroProps = {
   /**
    * Hero BackgroundImage
@@ -40,18 +23,12 @@ export type HeroProps = {
    * Hero Text
    */
   text?: string;
-
-  /**
-   * Hero CtaItems
-   */
-  ctaItems?: CtaItem[];
 };
 
 export const Hero = React.forwardRef(function Hero(
-  { backgroundImage, title, text, ctaItems }: HeroProps,
+  { backgroundImage, title, text }: HeroProps,
   ref: React.ForwardedRef<HTMLElement>
 ) {
-  const indexedCtaItems = idfy(ctaItems);
   return (
     <section id="hero" className={cx(`${prefix}--hero`)} ref={ref}>
       <Grid narrow>
