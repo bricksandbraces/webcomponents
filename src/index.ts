@@ -3,9 +3,13 @@
  */
 
 export * from "./components/BackTopTop/BackToTop";
+export * from "./components/Capability/Capability";
+export * from "./components/ContactSection/ContactSection";
 export * from "./components/CookieBanner/CookieBanner";
 export * from "./components/CookieModal/CookieModal";
 export * from "./components/Cookies/Cookies";
+export * from "./components/Expander/Expander";
+export * from "./components/Expander/ExpanderItem";
 export * from "./components/Footer/Footer";
 export * from "./components/Header/Header";
 export * from "./components/Header/HeaderLink";

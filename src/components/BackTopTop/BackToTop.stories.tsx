@@ -25,10 +25,6 @@ export const Default = () => {
         ]}
       />
       <Hero
-        ctaItems={[
-          { href: "#", label: "What we do", showChevron: true },
-          { href: "#", label: "Learn more about us", showChevron: false }
-        ]}
         backgroundImage="https://images.unsplash.com/photo-1557682250-33bd709cbe85?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
         title="Creating a better tomorrow."
         text="Creating a better tomorrow."
@@ -70,11 +66,6 @@ export const Default = () => {
           { href: "#", label: "Privacy" },
           { href: "#", label: "Contact" }
         ]}
-        description="Wir nutzen Cookies, um deine Experience zu verbessern. Deine Einstellungen kannst du jederzeit in den Einstellungen ändern."
-        descriptionLink={{
-          href: "#",
-          label: "Zu den Cookieeinstellungen"
-        }}
       />
     </div>
   );

@@ -42,7 +42,7 @@ export type CookieBannerProps = {
   /**
    * CookieBanner Custom Link Element
    */
-  linkElement?: React.ElementType;
+  linkElement?: () => JSX.Element;
 };
 
 const CookieBanner = (
