@@ -1,7 +1,7 @@
 import { TextInput, PasswordInput } from "@openbricksandbraces/designsystem";
 import { useControlledInput } from "@openbricksandbraces/designsystem/lib/esm/src/hooks/useControlled";
-import { prefix } from "@openbricksandbraces/designsystem/lib/esm/src/settings";
 import React from "react";
+import { prefix } from "../../settings";
 
 export type LoginFormProps = {
   /**

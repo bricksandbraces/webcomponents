@@ -1,7 +1,7 @@
-import { prefix } from "@openbricksandbraces/designsystem/lib/esm/src/settings";
 import { IconMinus, IconPlus } from "@tabler/icons";
 import cx from "classnames";
 import React, { useState } from "react";
+import { prefix } from "../../settings";
 
 export type ExpanderItemProps = {
   /**

@@ -1,6 +1,6 @@
-import { prefix } from "@openbricksandbraces/designsystem/lib/esm/src/settings";
 import cx from "classnames";
 import React, { ReactNode } from "react";
+import { prefix } from "../../settings";
 
 export type ProductHeaderLinkProps = {
   /**

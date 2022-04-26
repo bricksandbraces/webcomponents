@@ -1,8 +1,8 @@
 import { mapReactChildren } from "@openbricksandbraces/designsystem/lib/esm/src/helpers/reactUtilities";
 import { useControlledValue } from "@openbricksandbraces/designsystem/lib/esm/src/hooks/useControlled";
-import { prefix } from "@openbricksandbraces/designsystem/lib/esm/src/settings";
 import cx from "classnames";
 import React from "react";
+import { prefix } from "../../settings";
 import { WebTabProps } from "./WebTab";
 
 export type WebTabsProps = {

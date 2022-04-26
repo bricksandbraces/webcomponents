@@ -1,9 +1,9 @@
 import { Button } from "@openbricksandbraces/designsystem";
 import { idfy } from "@openbricksandbraces/designsystem/lib/esm/src/helpers/arrayUtilities";
-import { prefix } from "@openbricksandbraces/designsystem/lib/esm/src/settings";
 import { IconCircleCheck } from "@tabler/icons";
 import cx from "classnames";
 import React from "react";
+import { prefix } from "../../settings";
 
 export type PriceTagFeature = {
   /**

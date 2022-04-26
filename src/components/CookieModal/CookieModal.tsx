@@ -6,8 +6,8 @@ import {
   ModalFooter,
   ModalHeader
 } from "@openbricksandbraces/designsystem";
-import { prefix } from "@openbricksandbraces/designsystem/lib/esm/src/settings";
 import React from "react";
+import { prefix } from "../../settings";
 
 export enum OptType {
   OPT_IN,

@@ -1,6 +1,6 @@
 import { Accordion } from "@openbricksandbraces/designsystem";
-import { prefix } from "@openbricksandbraces/designsystem/lib/esm/src/settings";
 import React from "react";
+import { prefix } from "../../settings";
 import { WebTabs } from "./WebTabs";
 
 export type ResonsiveWebTabsProps = {

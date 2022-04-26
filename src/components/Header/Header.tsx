@@ -1,9 +1,9 @@
 import { Grid, Column, Logo, Button } from "@openbricksandbraces/designsystem";
 import { idfy } from "@openbricksandbraces/designsystem/lib/esm/src/helpers/arrayUtilities";
-import { prefix } from "@openbricksandbraces/designsystem/lib/esm/src/settings";
 import { IconMenu, IconX } from "@tabler/icons";
 import cx from "classnames";
 import React, { useState } from "react";
+import { prefix } from "../../settings";
 
 export type HeaderLinkItem = {
   /**

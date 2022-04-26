@@ -1,7 +1,7 @@
 import { Grid, Column, AspectRatio } from "@openbricksandbraces/designsystem";
-import { prefix } from "@openbricksandbraces/designsystem/lib/esm/src/settings";
 import cx from "classnames";
 import React from "react";
+import { prefix } from "../../settings";
 
 export type HeroProps = {
   /**

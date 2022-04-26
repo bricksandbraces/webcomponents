@@ -1,9 +1,9 @@
 import { IconOnlyButton } from "@openbricksandbraces/designsystem";
-import { prefix } from "@openbricksandbraces/designsystem/lib/esm/src/settings";
 import { IconArrowBarToUp } from "@tabler/icons";
 import cx from "classnames";
 import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
+import { prefix } from "../../settings";
 
 export type BackToTopProps = { anchor?: boolean };
 
