@@ -29,7 +29,6 @@
   "engines": {
     "node": ">=16.X"
   },
-  "main": "./lib/cjs/src/index.js",
   "module": "./lib/esm/src/index.js",
   "types": "./lib/esm/src/index.d.ts",
   "files": [
