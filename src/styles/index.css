@@ -5,3 +5,12 @@
 @import "@openbricksandbraces/designsystem/lib/styles/postcss/mixins.pcss";
 
 @import "./components/Footer.pcss";
+@import "./components/Hero.pcss";
+@import "./components/Capability.pcss";
+@import "./components/BackToTop.pcss";
+@import "./components/Header.pcss";
+@import "./components/WebTabs.pcss";
+@import "./components/PriceTag.pcss";
+@import "./components/CookieBanner.pcss";
+@import "./components/CookieModal.pcss";
+@import "./components/LoginForm.pcss";

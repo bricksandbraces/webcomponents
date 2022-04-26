@@ -1,0 +1,42 @@
+.$(prefix) {
+  &--capability {
+    width: 100%;
+    min-height: 100%;
+    padding: var(--size-spacing-07);
+    border-radius: calc(var(--component-radius-03) * 2);
+    background-color: var(--color-font-text-02);
+
+    &-icon {
+      width: 100%;
+      max-width: var(--size-container-05);
+      height: 100%;
+      max-height: var(--size-container-05);
+      margin-bottom: var(--size-spacing-06);
+
+      & > img {
+        width: 100%;
+        max-width: var(--size-container-05);
+        height: 100%;
+        max-height: var(--size-container-05);
+      }
+    }
+
+    &-title {
+      @mixin type--headline-03;
+
+      width: 90%;
+      color: var(--color-onbrand-01);
+      font-weight: 500;
+      line-height: 1.15;
+    }
+
+    &-text {
+      @mixin type--headline-05;
+
+      width: 90%;
+      margin: 0;
+      color: var(--color-onbrand-01);
+      font-weight: 400;
+    }
+  }
+}

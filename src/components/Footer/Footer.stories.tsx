@@ -15,14 +15,6 @@ export const Default = () => {
         { href: "#", label: "Privacy" },
         { href: "#", label: "Contact" }
       ])}
-      description={text(
-        "description",
-        "Wir nutzen Cookies, um deine Experience zu verbessern. Deine Einstellungen kannst du jederzeit in den Einstellungen ändern."
-      )}
-      descriptionLink={object("descriptionLink", {
-        href: "#",
-        label: "Zu den Cookieeinstellungen"
-      })}
     />
   );
 };
