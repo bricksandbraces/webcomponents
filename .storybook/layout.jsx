@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDarkMode } from "storybook-dark-mode";
-import { defaultTheme } from "@openbricksandbraces/designsystem/lib/esm/src/theme";
+import { defaultTheme } from "@openbricksandbraces/designsystem/lib/cjs/src/theme";
 
 import "../src/styles/index.css";
 import "./storybook.css";

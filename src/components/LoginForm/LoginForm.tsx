@@ -1,5 +1,5 @@
 import { TextInput, PasswordInput } from "@openbricksandbraces/designsystem";
-import { useControlledInput } from "@openbricksandbraces/designsystem/lib/esm/src/hooks/useControlled";
+import { useControlledInput } from "@openbricksandbraces/designsystem/lib/cjs/src/hooks/useControlled";
 import React from "react";
 import { prefix } from "../../settings";
 

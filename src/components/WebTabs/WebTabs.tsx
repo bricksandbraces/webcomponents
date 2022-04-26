@@ -1,5 +1,5 @@
-import { mapReactChildren } from "@openbricksandbraces/designsystem/lib/esm/src/helpers/reactUtilities";
-import { useControlledValue } from "@openbricksandbraces/designsystem/lib/esm/src/hooks/useControlled";
+import { mapReactChildren } from "@openbricksandbraces/designsystem/lib/cjs/src/helpers/reactUtilities";
+import { useControlledValue } from "@openbricksandbraces/designsystem/lib/cjs/src/hooks/useControlled";
 import cx from "classnames";
 import React from "react";
 import { prefix } from "../../settings";

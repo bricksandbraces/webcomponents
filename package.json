@@ -1,6 +1,6 @@
 {
   "name": "@openbricksandbraces/webcomponents",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Webcomponents for the Bricks & Braces brand.",
   "repository": "git://github.com/bricksandbraces/webcomponents.git",
   "scripts": {
@@ -20,7 +20,10 @@
     "format:fix": "DEBUG=eslint:cli-engine eslint --fix --cache --cache-strategy content . && prettier --write . && stylelint \"**/*.?(p)css\" --fix --formatter verbose",
     "format:check": "DEBUG=eslint:cli-engine eslint --cache --cache-strategy content . && prettier --check . && stylelint \"**/*.?(p)css\" --formatter verbose",
     "task:generate-pcss-theme": "ts-node -P tasks/tsconfig.json tasks/generate-pcss-theme.ts && stylelint \"src/styles/theme.pcss\" --fix --formatter verbose",
-    "publish:bb": "yarn npm publish --tag latest"
+    "publish:bb": "yarn npm publish --tag latest",
+    "publish:patch": "yarn version patch && git checkout main && git add . && git commit -m 'Automatic release' && git push && yarn build:package && yarn publish:bb",
+    "publish:minor": "yarn version minor && git checkout main && git add . && git commit -m 'Automatic release' && git push && yarn build:package && yarn publish:bb",
+    "publish:major": "yarn version major && git checkout main && git add . && git commit -m 'Automatic release' && git push && yarn build:package && yarn publish:bb"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.com"
@@ -46,7 +49,7 @@
     "react-dom": "^17.X"
   },
   "dependencies": {
-    "@openbricksandbraces/designsystem": "^1.0.4",
+    "@openbricksandbraces/designsystem": "^1.0.6",
     "@openbricksandbraces/designtokens": "^0.0.8",
     "@openbricksandbraces/eloguent": "^0.1.2",
     "@storybook/addon-a11y": "^6.4.22",
@@ -125,7 +128,7 @@
     "http-server": "^14.1.0",
     "husky": "^7.0.4",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^28.0.0",
+    "jest": "^28.0.1",
     "postcss": "^8.4.12",
     "postcss-calc": "^8.2.4",
     "postcss-cli": "^9.1.0",

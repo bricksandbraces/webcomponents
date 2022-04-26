@@ -1,5 +1,5 @@
 import { Grid, Column, Logo, Button } from "@openbricksandbraces/designsystem";
-import { idfy } from "@openbricksandbraces/designsystem/lib/esm/src/helpers/arrayUtilities";
+import { idfy } from "@openbricksandbraces/designsystem/lib/cjs/src/helpers/arrayUtilities";
 import { IconMenu, IconX } from "@tabler/icons";
 import cx from "classnames";
 import React, { useState } from "react";

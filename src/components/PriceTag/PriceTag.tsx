@@ -1,5 +1,5 @@
 import { Button } from "@openbricksandbraces/designsystem";
-import { idfy } from "@openbricksandbraces/designsystem/lib/esm/src/helpers/arrayUtilities";
+import { idfy } from "@openbricksandbraces/designsystem/lib/cjs/src/helpers/arrayUtilities";
 import { IconCircleCheck } from "@tabler/icons";
 import cx from "classnames";
 import React from "react";

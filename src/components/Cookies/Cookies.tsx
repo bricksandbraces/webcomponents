@@ -1,4 +1,4 @@
-import { useConstant } from "@openbricksandbraces/designsystem/lib/esm/src/hooks/useConstant";
+import { useConstant } from "@openbricksandbraces/designsystem/lib/cjs/src/hooks/useConstant";
 import React, { useEffect, useRef, useState } from "react";
 import { useCookie } from "react-use";
 import CookieBanner from "../CookieBanner/CookieBanner";
