@@ -16,3 +16,5 @@
 @import "./components/LoginForm.pcss";
 @import "./components/PriceTag.pcss";
 @import "./components/WebTabs.pcss";
+@import "./components/Hero.pcss";
+@import "./components/Capability.pcss";

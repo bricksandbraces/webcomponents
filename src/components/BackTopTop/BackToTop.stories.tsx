@@ -4,12 +4,11 @@ import {
   Headline,
   Marketing
 } from "@openbricksandbraces/designsystem";
-import { boolean, withKnobs } from "@storybook/addon-knobs";
+import { withKnobs } from "@storybook/addon-knobs";
 import React from "react";
-import { CTASection } from "../CTASection/CTASection";
 import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
-import { LeadSpace } from "../LeadSpace/LeadSpace";
+import { Hero } from "../Hero/Hero";
 import { BackToTop } from "./BackToTop";
 
 export default { title: "Web/BackToTop", decorators: [withKnobs] };
@@ -25,27 +24,24 @@ export const Default = () => {
           { href: "#", label: "Blog" }
         ]}
       />
-      <LeadSpace
-        ctaItems={[
-          { href: "#", label: "What we do", showChevron: true },
-          { href: "#", label: "Learn more about us", showChevron: false }
-        ]}
-        backgroundImage="https://i.pinimg.com/originals/30/c6/c3/30c6c39d2ad38b4be22a4932707b0550.png"
+      <Hero
+        backgroundImage="https://images.unsplash.com/photo-1557682250-33bd709cbe85?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
         title="Creating a better tomorrow."
+        text="Creating a better tomorrow."
       />
       <Grid narrow>
         <Column
           sm={4}
           md={6}
           mdOffset={1}
-          lg={8}
-          lgOffset={2}
-          xlg={12}
-          xlgOffset={2}
+          lg={14}
+          lgOffset={1}
+          xlg={14}
+          xlgOffset={1}
         >
-          <div style={{ color: "#e0e0e0", padding: "0 1rem" }}>
+          <div>
             <Marketing type="marketing-01">Hello &amp; Hi!</Marketing>
-            <Headline type="h1">
+            <Headline type="h4">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
               erat, sed diam voluptua. At vero eos et accusam et justo duo
@@ -60,8 +56,7 @@ export const Default = () => {
           </div>
         </Column>
       </Grid>
-      <BackToTop anchor={boolean("anchor", false)} />
-      <CTASection />
+      <BackToTop />
       <Footer
         baseUrl="#"
         linkItems={[
@@ -71,11 +66,6 @@ export const Default = () => {
           { href: "#", label: "Privacy" },
           { href: "#", label: "Contact" }
         ]}
-        description="Wir nutzen Cookies, um deine Experience zu verbessern. Deine Einstellungen kannst du jederzeit in den Einstellungen ändern."
-        descriptionLink={{
-          href: "#",
-          label: "Zu den Cookieeinstellungen"
-        }}
       />
     </div>
   );

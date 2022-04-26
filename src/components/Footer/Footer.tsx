@@ -1,4 +1,4 @@
-import { Column, Grid, Link, Logo } from "@openbricksandbraces/designsystem";
+import { Column, Grid, Logo } from "@openbricksandbraces/designsystem";
 import type { LinkItem } from "@openbricksandbraces/designsystem";
 import { idfy } from "@openbricksandbraces/designsystem/lib/esm/src/helpers/arrayUtilities";
 import { prefix } from "@openbricksandbraces/designsystem/lib/esm/src/settings";
@@ -12,84 +12,54 @@ export type FooterProps = {
   linkItems?: LinkItem[];
 
   /**
-   * Footer CompanyLabel
-   */
-  companyLabel?: React.ReactNode;
-
-  /**
    * Footer ClassName
    */
   className?: string;
 
   /**
-   * Footer CtaHeadline
-   */
-  ctaHeadline?: string;
-
-  /**
-   * Footer CtaText
-   */
-  ctaText?: string;
-
-  /**
    * Footer BaseUrl
    */
   baseUrl?: string;
-
-  /**
-   * Footer Description
-   */
-  description?: string;
-
-  /**
-   * Footer DescriptionLink
-   */
-  descriptionLink?: LinkItem;
 };
 
 export const Footer = React.forwardRef(function Footer(
-  { linkItems, className }: FooterProps,
+  { linkItems, baseUrl, className }: FooterProps,
   ref: React.ForwardedRef<HTMLElement>
 ) {
   const indexedLinkItems = idfy(linkItems);
   return (
     <>
-      <footer className={cx(`${prefix}--webfooter`, className)} ref={ref}>
-        <Grid narrow className={`${prefix}--webfooter-grid`}>
-          <Column
-            sm={3}
-            md={4}
-            lg={4}
-            xlg={4}
-            className={`${prefix}--webfooter-column`}
-          >
-            <Logo
-              size="xsmall"
-              type="logotype"
-              color="white"
-              className={`${prefix}--webfooter-logo`}
-            />
-          </Column>
-          <Column
-            sm={4}
-            md={4}
-            lg={12}
-            xlg={12}
-            className={`${prefix}--webfooter-column`}
-          >
-            <div className={`${prefix}--webfooter-linksection`}>
-              {indexedLinkItems?.map((link) => {
-                return (
-                  <Link
-                    key={link.id}
-                    href={link.href}
-                    className={`${prefix}--webfooter-linksection__item`}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              })}
-            </div>
+      <footer className={cx(`${prefix}--footer`, className)} ref={ref}>
+        <Grid narrow className={cx(`${prefix}--footer-wrapper`)}>
+          <Column sm={4} md={8} lg={16} xlg={16}>
+            <Grid narrow className={cx(`${prefix}--footer-bg`)}>
+              <Column
+                sm={4}
+                md={8}
+                lg={14}
+                lgOffset={1}
+                xlgOffset={1}
+                xlg={14}
+                className={cx(`${prefix}--footer-container`)}
+              >
+                <a href={baseUrl} className={cx(`${prefix}--footer-logo`)}>
+                  <Logo type="logotype" color="black" size="xsmall" />
+                </a>
+                <div className={cx(`${prefix}--footer-links`)}>
+                  {indexedLinkItems?.map((link) => {
+                    return (
+                      <a
+                        key={link.id}
+                        href={link.href}
+                        className={cx(`${prefix}--footer-links__item`)}
+                      >
+                        <p>{link.label}</p>
+                      </a>
+                    );
+                  })}
+                </div>
+              </Column>
+            </Grid>
           </Column>
         </Grid>
       </footer>

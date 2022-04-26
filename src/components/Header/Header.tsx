@@ -1,18 +1,27 @@
-import { Grid, Column, Logo } from "@openbricksandbraces/designsystem";
-import type { LinkItem } from "@openbricksandbraces/designsystem";
-import { prefix } from "@openbricksandbraces/designsystem/lib/esm/src//settings";
+import { Grid, Column, Logo, Button } from "@openbricksandbraces/designsystem";
 import { idfy } from "@openbricksandbraces/designsystem/lib/esm/src/helpers/arrayUtilities";
-import { useControlledValue } from "@openbricksandbraces/designsystem/lib/esm/src/hooks/useControlled";
+import { prefix } from "@openbricksandbraces/designsystem/lib/esm/src/settings";
 import { IconMenu, IconX } from "@tabler/icons";
 import cx from "classnames";
-import React from "react";
-import { HeaderLink } from "./HeaderLink";
+import React, { useState } from "react";
+
+export type HeaderLinkItem = {
+  /**
+   * HeaderLinkItem HeaderLink to location
+   */
+  href: string;
+
+  /**
+   * HeaderLinkItem Label
+   */
+  label: string;
+};
 
 export type HeaderProps = {
   /**
-   * Header LinkItems
+   * Header HeaderLinkItems
    */
-  linkItems?: LinkItem[];
+  linkItems?: HeaderLinkItem[];
 
   /**
    * Header Logo
@@ -41,77 +50,88 @@ export type HeaderProps = {
 };
 
 export const Header = React.forwardRef(function Header(
-  { open, defaultOpen, onOpenChange, linkItems, baseUrl }: HeaderProps,
+  { linkItems, baseUrl }: HeaderProps,
   ref: React.ForwardedRef<HTMLElement>
 ) {
-  const [headerOpen, setHeaderOpen] = useControlledValue(
-    open,
-    defaultOpen,
-    onOpenChange,
-    false
-  );
-  const indexedLinkItems = idfy(linkItems);
+  const indexedHeaderLinkItems = idfy(linkItems);
+  const [open, setOpen] = useState(false);
   return (
-    <>
-      <header className={cx(`${prefix}--header`)} ref={ref}>
-        <div>
-          <Grid narrow>
-            <Column
-              sm={4}
-              md={8}
-              lg={16}
-              xlg={16}
-              className={cx(`${prefix}--header-container`)}
-            >
-              <a href={baseUrl} className={cx(`${prefix}--header-logo`)}>
-                <Logo type="logotype" color="black" size="xsmall" />
-              </a>
-              <button
-                className={cx(`${prefix}--header-toggle`, {
-                  [`${prefix}--header-toggle__open`]: headerOpen
-                })}
-                onClick={() => {
-                  setHeaderOpen(!headerOpen);
-                }}
-              >
-                <IconMenu />
-              </button>
-            </Column>
-          </Grid>
-        </div>
-      </header>
+    <header
+      className={cx(`${prefix}--header ${prefix}--header-product`)}
+      ref={ref}
+    >
       <div
         className={cx(`${prefix}--header-menu`, {
-          [`${prefix}--header-menu__open`]: headerOpen
+          [`${prefix}--header-menu__open`]: open
         })}
       >
-        <button
-          className={cx(`${prefix}--header-toggle`, {
-            [`${prefix}--header-toggle__open`]: headerOpen
-          })}
-          onClick={() => {
-            setHeaderOpen(!headerOpen);
-          }}
-        >
-          <IconX />
-        </button>
-        <div>
-          {indexedLinkItems?.map((link) => {
-            return (
-              <HeaderLink
-                key={link.id}
-                href={link.href}
-                onClick={() => {
-                  setHeaderOpen(!headerOpen);
-                }}
-              >
-                {link.label}
-              </HeaderLink>
-            );
-          })}
+        <div className={cx(`${prefix}--header-menu__button-container`)}>
+          <p className={cx(`${prefix}--header-menu__label`)}>Moin!</p>
+          <button
+            className={cx(`${prefix}--header-menu__button`)}
+            onClick={() => setOpen(false)}
+          >
+            <IconX size={20} />
+          </button>
+        </div>
+        <div className={cx(`${prefix}--header-menu__item-list`)}>
+          <div>
+            {indexedHeaderLinkItems?.map((link) => {
+              return (
+                <a
+                  key={link.id}
+                  href={link.href}
+                  className={cx(`${prefix}--header-menu__item`)}
+                >
+                  <p>{link.label}</p>
+                </a>
+              );
+            })}
+          </div>
+          <Button
+            fluid
+            size="large"
+            className={cx(`${prefix}--header-menu__item-button`)}
+          >
+            Kontakt
+          </Button>
         </div>
       </div>
       <div className={cx(`${prefix}--header-overlay`)} />
-    </>
+      <Grid narrow>
+        <Column
+          sm={4}
+          md={8}
+          lg={14}
+          lgOffset={1}
+          xlgOffset={1}
+          xlg={14}
+          className={cx(`${prefix}--header-container`)}
+        >
+          <a href={baseUrl} className={cx(`${prefix}--header-logo`)}>
+            <Logo type="logotype" color="black" size="xsmall" />
+          </a>
+          <div className={cx(`${prefix}--header-links`)}>
+            {indexedHeaderLinkItems?.map((link) => {
+              return (
+                <a
+                  key={link.id}
+                  href={link.href}
+                  className={cx(`${prefix}--header-links__item`)}
+                >
+                  <p>{link.label}</p>
+                </a>
+              );
+            })}
+          </div>
+          <button
+            className={cx(`${prefix}--header-button`)}
+            onClick={() => setOpen(true)}
+          >
+            <IconMenu size={20} />
+          </button>
+        </Column>
+      </Grid>
+    </header>
   );
 });
