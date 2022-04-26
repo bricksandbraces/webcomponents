@@ -1,6 +1,6 @@
 {
   "name": "@openbricksandbraces/webcomponents",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Webcomponents for the Bricks & Braces brand.",
   "repository": "git://github.com/bricksandbraces/webcomponents.git",
   "scripts": {
